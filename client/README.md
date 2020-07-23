@@ -1,4 +1,4 @@
-# client
+# GuestThePicture-Client
 
 ## Project setup
 ```
