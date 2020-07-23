@@ -1,0 +1,37 @@
+1. Membuat route
+
+  {
+    path: '/room',
+    name: 'Room',
+    component: () => import(/* webpackChunkName: "room" */ '../views/Room.vue')
+  },
+  {
+    path: 'loby',
+    name: 'Loby',
+    componen: () => import(/* webpackChunkName: "loby" */ '../viewsLoby.vue')
+  }
+
+2. Membuat Componen Login, chat room, input jawaban
+    ---> cd src/views
+    ---> touch Answer.vue
+    ---> touch Chat.vue
+    ---> touch Login.vue
+
+3. Menambah Views { Loby.vue, Room.vue } & Mengubah isi Home View
+
+Didalam home ada :
+- Title
+- Login
+- Button to Rooms
+
+---> Kalau dia bisa login makan bisa menggunakan vitur chat
+---> Kalau tidak bisa login maka nonaktifkan vitur chat
+---> Setelah login masukkan ke localstorage aja datanya
+
+4. Menambah cdn css bootstrap di public/index.html
+
+5. Mengisi Form di componen login
+
+6. Memasukkan componen login ke Dalam home page
+
+7. Menambah router link, Hannya Untuk testing
