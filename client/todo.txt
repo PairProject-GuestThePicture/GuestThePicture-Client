@@ -39,3 +39,17 @@ zoom jam 8/setelah template selesai
 todo timothy
 1. view game room
 2. component canvas + tools buat milih2 opsi gambar
+
+
+
+
+
+=======================================================================================
+Cobain room socket io + bikin sistem buat room nya
+Vuex
+Bikin list kategory : 
+{
+    animal: [anjingg, kcuing, burung, ikan]
+    food: [nasi, sate, piza]
+}
+Tampilan nya. Chatting.
