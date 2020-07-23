@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Gameroom from '../views/Gameroom.vue'
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
@@ -26,7 +27,12 @@ const routes = [
   {
     path: 'loby',
     name: 'Loby',
-    componen: () => import(/* webpackChunkName: "loby" */ '../views/Loby.vue')
+    component: () => import(/* webpackChunkName: "loby" */ '../views/Loby.vue')
+  },
+  {
+    path: '/gameroom',
+    name: 'Gameroom',
+    component: Gameroom
   }
 ]
 

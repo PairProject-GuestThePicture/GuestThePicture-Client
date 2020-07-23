@@ -1,0 +1,1 @@
+- bikin component canvas + tool gambar, di socket io in, dibantuin ka isro & ka ziady
