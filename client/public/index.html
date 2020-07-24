@@ -6,6 +6,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Galada&family=Roboto&display=swap');
+
+      body{
+        background-image: url('../src/assets/mitchell-luo-XvSb5B9SZ9o-unsplash.jpg');
+        background-size: cover;
+        font-family: Arial, Helvetica, sans-serif;
+      };
+      @font-face {
+        font-family: fontjudul;
+        src: url('../src/assets/dpcomic.ttf');
+      };
+      @font-face {
+        font-family: fontnotjudul;
+        src: url('../src/assets/lunchds.ttf');
+      };
+      .judul{
+        font-family: 'fontjudul';
+      }
+      h3, a, p, button, h1, h2, h4, h5, h6 {
+        /* font-family: 'fontnotjudul'; */
+        font-family: 'DM Sans', sans-serif;
+
+      }
+
+    </style>
+
   </head>
   <body>
     <noscript>

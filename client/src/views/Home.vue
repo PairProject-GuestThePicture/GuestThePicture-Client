@@ -29,6 +29,9 @@ export default {
 </script>
 
 <style>
+.home {
+  background-color: slategray;
+}
 /* .button-all {
     background-color: rgb(255, 255, 255);
     border: 2px solid blue;
