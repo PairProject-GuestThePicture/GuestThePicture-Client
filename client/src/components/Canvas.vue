@@ -30,8 +30,7 @@
 </template>
 
 <script>
-import io from 'socket.io-client'
-const socket = io('http://localhost:3000/')
+import socket from '@/config/socket.js'
 
 export default {
   name: 'Canvas',
@@ -120,9 +119,11 @@ export default {
     this.ctx = this.canvas.getContext('2d')
     // this.canvas.height = window.innerHeight
     // this.canvas.width = window.innerWidth
-    socket.on('connection', () => {
-      console.log(socket.connected)
-    })
+    
+    
+    // socket.on('connection', () => {
+    //   console.log(socket.connected)
+    // })
 
     // socket.on('disconnect', () => {
     //   console.log(socket.connected)

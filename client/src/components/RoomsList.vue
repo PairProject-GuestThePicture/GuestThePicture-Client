@@ -1,7 +1,6 @@
 <template>
-<div>
-   <div class="container-fluid" v-for="(room, id) in listRooms" :key="id">
-      <div class="col-3">
+  <div class="container-fluid">
+       <div class="col-3" v-bind:socket="socket"  v-for="(room, id) in listRooms" :key="id">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h2 class="card-title">{{room.title}}</h2>
@@ -11,12 +10,11 @@
         </div>
       </div>
    </div>
-</div>
 </template>
 
 <script>
-import io from 'socket.io-client'
-const socket = io('http://localhost:3000/')
+import socket from '@/config/socket.js'
+
 export default {
   name: 'RoomsList',
   data () {
@@ -27,32 +25,34 @@ export default {
   },
   methods: {
     join (room) {
+      console.log('ini join title', room)
       socket.emit('joinRoom', room)
     }
+    // fetchData () {
+    //   socket.on('roomsFromServer', (rooms) => {
+    //     this.listRooms = rooms
+    //     console.log(rooms)
+    //   })
+    // }
+  },
+  mounted () {
+    socket.emit('roomsFromServer')
+    socket.on('roomsFromServer', (rooms) => {
+      this.listRooms = rooms
+      console.log(rooms)
+    })
+    socket.on('responseJoin', (rooms) => {
+      this.$router.push('/room')
+    })
   },
   created () {
     // this.$store.dispatch('fetchRooms')
-    socket.on('roomsFromServer', function (rooms) {
-    // console.log(rooms)
-      this.rooms = rooms
-      console.log(this.rooms)
-    })
   },
   computed: {
     // rooms () {
     //   return this.$store.state.rooms
     // }
   }
-// mounted () {
-  // socket.on('roomsFromServer', function (rooms) {
-  //   // console.log(rooms)
-  //   this.rooms = rooms
-  //   console.log(this.rooms)
-  // })
-//   socket.on('fullMember', function (message) {
-//     this.message = message
-//   })
-// }
 }
 </script>
 
