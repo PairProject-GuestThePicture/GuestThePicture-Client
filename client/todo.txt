@@ -1,0 +1,59 @@
+To do
+1. home -> buat login
+2. lobby -> list room, create room(category)
+3. modal create room -> form
+3. game room -> canvas, input jawaban, list chat, list user(max 5), score, random kata dari category buat digambar
+    - game per round -> sekian detik
+    - yang nge gambar ->bisa gambar di canvas, makin banyak yg bisa nebak poinnya makin gede
+    - yang nebak -> bisa input jawaban, makin cepet scorenya makin gede, kalo uda nebak semua next round
+4. deploy server & client
+    - server : socket.io
+    - client : socket.io-client, logic, data
+
+Fitur
+1. views
+    - home : PIC -> ichlas, deadline: 19.00
+    - lobby : PIC -> fiah, deadline: 19.00
+    - game room ():
+        a. yg gambar: PIC -> timothy, deadline: 20.00 secepatnya
+        - canvas
+        - pilihan buat gambar
+        PIC -> ichlas, deadline: 19.00
+        - chat room
+        - input jawaban
+3. component
+    - modal create room -> fiah, 
+    - sisany sesuain view -> 19.00
+
+4. server: PIC-> fiah, deadline 20.00
+
+5. vue router: PIC -> ichlas, deadline 20.00
+-----------------------------------------
+zoom jam 8/setelah template selesai
+
+6. vuex: PIC -> timothy, deadline 20.00
+7. views + vuex + router -> masing2, 
+
+- di github, bikin file nama.txt -> isiny yang uda kerjain
+
+todo timothy
+1. logic game room
+    1. button start game = munculin kata2 di yg ngegambar, mulai countdown waktu,
+    yg gambar bisa ngegambar, yg nebak bisa ngetik
+    2. skor awal 0 => tiap jawab ditambah skorny
+    3. waktu abis => ganti orang muncul kata2 di orang laen
+    4. sekian round => game abis
+
+
+
+
+
+=======================================================================================
+Cobain room socket io + bikin sistem buat room nya
+Vuex
+Bikin list kategory : 
+{
+    animal: [anjingg, kcuing, burung, ikan]
+    food: [nasi, sate, piza]
+}
+Tampilan nya. Chatting.
