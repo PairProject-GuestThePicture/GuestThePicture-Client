@@ -37,8 +37,12 @@ zoom jam 8/setelah template selesai
 - di github, bikin file nama.txt -> isiny yang uda kerjain
 
 todo timothy
-1. view game room
-2. component canvas + tools buat milih2 opsi gambar
+1. logic game room
+    1. button start game = munculin kata2 di yg ngegambar, mulai countdown waktu,
+    yg gambar bisa ngegambar, yg nebak bisa ngetik
+    2. skor awal 0 => tiap jawab ditambah skorny
+    3. waktu abis => ganti orang muncul kata2 di orang laen
+    4. sekian round => game abis
 
 
 
