@@ -1,22 +1,18 @@
 <template>
   <div class="login">
-    <form>
+    <form v-on:submit.prevent="createUser">
       <div class="form-group">
         <label for="exampleInputEmail1">Username</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  v-model='username'>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <input v-model="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
       </div>
       <div class="button-all">
-        <button type="submit" @click.prevent='submitLogin'>LOGIN</button>
+        <button type="submit" class="btn btn-primary">LOGIN</button>
       </div>
     </form>
   </div>
 </template>
 
 <script>
-import io from 'socket.io-client'
-const socket = io('http://localhost:3000/')
-
 export default {
   name: 'Login',
   data () {
@@ -25,11 +21,18 @@ export default {
     }
   },
   methods: {
-    submitLogin () {
-      this.$store.dispatch('moveToLobby')
-      localStorage.setItem('username', this.username)
-      socket.emit('clientLogin', this.username)
+    createUser () {
+      this.$store.commit('SET_USERNAME', this.username)
+      this.$router.push('/loby')
     }
+  },
+  computed: {
+    getUsername () {
+      return this.$store.state.username
+    }
+  },
+  created () {
+    this.username = this.getUsername
   }
 }
 </script>
