@@ -7,11 +7,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    rooms: null
+    rooms: null,
+    username: ''
   },
   mutations: {
     FETCH_ROOMS (state, payload) {
       state.rooms = payload
+    },
+    SET_USERNAME (state, payload) {
+      state.username = payload
     }
   },
   actions: {
