@@ -14,15 +14,13 @@ export default {
   name: 'Chat',
   data () {
     return {}
-  }, 
+  },
   mounted () {
     socket = io.connect('http://localhost:3000')
 
     socket.on('init', function () {
       console.log('Init invoked')
     })
-
-   
   }
 }
 </script>

@@ -48,6 +48,11 @@ export default {
   },
   created () {
   },
+  computed: {
+    getUsername () {
+      return this.$store.state.username
+    }
+  },
   methods: {
     showModal () {
       this.isModalOpen = true

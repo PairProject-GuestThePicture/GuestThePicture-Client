@@ -2,8 +2,7 @@
   <div>
       <div class="container">
           <div class="row">
-              <div class="col-sm-4" style="height: 800px; background-color:red;">
-                  List User
+              <div class="col-sm-4 bigrectangle" style="height: 500px; ">
               </div>
               <div class="col-sm-8">
                   <div class="row" style="height: 600px; background-color:blue;">
@@ -14,8 +13,8 @@
                       <div class="col-sm-6" style="height: 200px">
                           <!-- <Answer /> -->
                       </div>
-                      <div class="col-sm-6" style="height: 200px; background-color:yellow;">
-                          Chattingan
+                      <div class="col-sm-6" style="height: 200px; ">
+                          <Chat />
                       </div>
                   </div>
               </div>
@@ -36,5 +35,7 @@ export default {
 </script>
 
 <style>
-
+.bigrectangle {
+  padding: 20px;
+}
 </style>

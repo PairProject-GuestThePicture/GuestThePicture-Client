@@ -1,5 +1,7 @@
 <template>
   <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
        <div class="col-3" v-bind:socket="socket"  v-for="(room, id) in listRooms" :key="id">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
@@ -9,6 +11,8 @@
           </div>
         </div>
       </div>
+      </div>
+    </div>
    </div>
 </template>
 
