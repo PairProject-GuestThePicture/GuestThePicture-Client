@@ -23,9 +23,6 @@ export default {
 </script>
 
 <style>
-.container {
-
-}
 form input {
   border: 10;
   padding: 10px;

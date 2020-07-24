@@ -1,7 +1,17 @@
 <template>
   <div style>
-    <div>
-      <h5></h5>
+    <div class="col-sm-8" style="display:flex; justfy-content: center; align-items: center;">
+      <h4 style="color:white;" v-if='isDrawing == true'>{{ drawThis }}</h4>
+      <canvas
+        id='my-canvas'
+        @mousedown='startDraw'
+        @mouseup='stopDraw'
+        @mousemove='draw'
+        width='450px'
+        height='230px'
+      />
+    </div>
+    <div class="col-sm-4">
       <h3 style="color:white">Tool</h3>
       <h4 style="color:white">Change Brush Color</h4>
       <button @click='strokeRed' class="btn btn-primary">RED</button>
@@ -140,6 +150,7 @@ export default {
     inputAnswer () {
       this.isDrawing = false
       socket.emit('submitAnswer', [this.guessDrawing, this.answerDrawing])
+      console.log('masukk sini answer')
     }
   },
   mounted () {
