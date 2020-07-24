@@ -1,7 +1,8 @@
 <template>
   <div class="container home">
     <h3>{{ title }}</h3>
-    <div class="col-sm-6 offset-sm-3">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
       <Login />
       <div class="button-all mt-4">
         <a href="" class="" style="color:white">Rooms</a>
@@ -28,7 +29,7 @@ export default {
 </script>
 
 <style>
-.button-all {
+/* .button-all {
     background-color: rgb(255, 255, 255);
     border: 2px solid blue;
     color: blue;
@@ -46,5 +47,5 @@ export default {
 
 a:hover{
     text-decoration: unset;
-}
+} */
 </style>
