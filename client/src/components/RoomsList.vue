@@ -1,45 +1,65 @@
 <template>
-   <div class="container-fluid">
-    <div class="col-3">
-      <div class="card" style="width: 18rem;">
+<div>
+   <div class="container-fluid" v-for="(room, id) in listRooms" :key="id">
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h2 class="card-title">Fiah Room</h2>
-            <h3 class="card-text">Everthing</h3>
-            <a href="#" class="btn btn-primary">Join</a>
+            <h2 class="card-title">{{room.title}}</h2>
+            <h3 class="card-text">{{room.description}}</h3>
+            <a href="#" class="btn btn-primary" @click.prevent="join(room.title)">Join</a>
           </div>
+        </div>
       </div>
-    </div>
-    <div class="col-3">
-      <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h2 class="card-title">Fiah Room</h2>
-            <h3 class="card-text">All about animals</h3>
-            <a href="#" class="btn btn-primary">Join</a>
-          </div>
-      </div>
-    </div>
-       <div class="col-3">
-      <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h2 class="card-title">Fiah Room</h2>
-            <h3 class="card-text">All about human</h3>
-            <a href="#" class="btn btn-primary">Join</a>
-          </div>
-      </div>
-    </div>
- </div>
-
+   </div>
+</div>
 </template>
 
 <script>
+import io from 'socket.io-client'
+const socket = io('http://localhost:3000/')
 export default {
-  name: 'RoomsList'
+  name: 'RoomsList',
+  data () {
+    return {
+      message: '',
+      listRooms: []
+    }
+  },
+  methods: {
+    join (room) {
+      socket.emit('joinRoom', room)
+    }
+  },
+  created () {
+    // this.$store.dispatch('fetchRooms')
+    socket.on('roomsFromServer', function (rooms) {
+    // console.log(rooms)
+      this.rooms = rooms
+      console.log(this.rooms)
+    })
+  },
+  computed: {
+    // rooms () {
+    //   return this.$store.state.rooms
+    // }
+  }
+// mounted () {
+  // socket.on('roomsFromServer', function (rooms) {
+  //   // console.log(rooms)
+  //   this.rooms = rooms
+  //   console.log(this.rooms)
+  // })
+//   socket.on('fullMember', function (message) {
+//     this.message = message
+//   })
+// }
 }
 </script>
 
 <style scoped>
   .container-fluid{
     display: flex;
+    flex-direction: row;
   }
   .card{
     background-color:#b7efcd;
