@@ -8,11 +8,10 @@
               <div class="col-sm-8">
                   <div class="row" style="height: 600px; background-color:blue;">
                       <Canvas />
-
                   </div>
                   <div class="row">
-                      <div class="col-sm-6" style="height: 200px; background-color:green;">
-                          Input jawaban
+                      <div class="col-sm-6" style="height: 200px">
+                          <!-- <Answer /> -->
                       </div>
                       <div class="col-sm-6" style="height: 200px; background-color:yellow;">
                           Chattingan
@@ -26,11 +25,13 @@
 
 <script>
 import Canvas from '@/components/Canvas.vue'
+// import Answer from '@/components/Answer.vue'
 
 export default {
   name: 'Gameroom',
   components: {
     Canvas
+    // Answer
   }
 }
 </script>
