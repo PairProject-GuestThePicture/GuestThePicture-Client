@@ -48,6 +48,11 @@ export default {
   },
   created () {
   },
+  computed: {
+    getUsername () {
+      return this.$store.state.username
+    }
+  },
   methods: {
     showModal () {
       this.isModalOpen = true
@@ -59,7 +64,8 @@ export default {
     },
     save () {
       // send data
-      socket.emit('newRooms', { title: this.title, description: this.description })
+      console.log(this.username)
+      socket.emit('newRooms', { title: this.title, description: this.description, username: this.getUsername })
       this.$router.push('/room')
       this.$store.dispatch('fetchRooms')
     }

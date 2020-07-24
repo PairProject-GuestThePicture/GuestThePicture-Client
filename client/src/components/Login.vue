@@ -1,9 +1,11 @@
 <template>
-  <div class="login">
+  <div class="login col-sm-4">
+
     <form v-on:submit.prevent="createUser">
       <div class="form-group">
-        <label for="exampleInputEmail1">Username</label>
-        <input v-model="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+
+        <label for="exampleInputEmail1" >Username</label>
+        <input style="text-align:center; " v-model="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
       </div>
       <div class="button-all">
         <button type="submit" class="btn btn-primary">LOGIN</button>

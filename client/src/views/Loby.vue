@@ -10,7 +10,7 @@
 import RoomsList from '../components/RoomsList.vue'
 import CreateRoom from '../components/CreateRoom.vue'
 export default {
-  name: 'Rooms',
+  name: 'Loby',
   components: {
     RoomsList,
     CreateRoom
