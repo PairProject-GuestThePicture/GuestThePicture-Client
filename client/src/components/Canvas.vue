@@ -34,8 +34,7 @@
 </template>
 
 <script>
-import io from 'socket.io-client'
-const socket = io('http://localhost:3000/')
+import socket from '@/config/socket.js'
 
 export default {
   name: 'Canvas',
@@ -146,7 +145,6 @@ export default {
       console.log(socket.connected)
       console.log(socket.id)
     })
-
     socket.on('draw', payload => {
       this.loadCanvas(payload)
     })
