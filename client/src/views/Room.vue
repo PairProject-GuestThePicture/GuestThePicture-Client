@@ -5,13 +5,12 @@
               <div class="col-sm-4 bigrectangle" style="height: 500px; ">
               </div>
               <div class="col-sm-8">
-                  <div class="row bigrectangle" style="height: 300px; background-color:blue;">
-                      <Canvas />
-
+                  <div class="row" style="height: 600px; background-color:blue;">
+                      <!-- <Canvas /> -->
                   </div>
                   <div class="row">
-                      <div class="col-sm-6" style="height: 200px; ">
-                          <Answer />
+                      <div class="col-sm-6" style="height: 200px">
+                          <!-- <Answer /> -->
                       </div>
                       <div class="col-sm-6" style="height: 200px; ">
                           <Chat />
