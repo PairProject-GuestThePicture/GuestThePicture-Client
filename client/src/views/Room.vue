@@ -11,8 +11,8 @@
 
                   </div>
                   <div class="row">
-                      <div class="col-sm-6" style="height: 200px; background-color:green;">
-                          Input jawaban
+                      <div class="col-sm-6" style="height: 200px">
+                          <!-- <Answer /> -->
                       </div>
                       <div class="col-sm-6" style="height: 200px; background-color:yellow;">
                           Chattingan

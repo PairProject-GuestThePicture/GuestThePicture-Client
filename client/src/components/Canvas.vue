@@ -9,6 +9,7 @@
       <button @click='strokeBlue' class="btn btn-primary">BLUE</button>
       <button @click='strokeBlack' class="btn btn-primary">BLACK</button>
       <button @click='eraser' class="btn btn-primary">ERASER</button>
+      <button @click='clearCanvas' class="btn btn-primary">CLEAR</button>
     </div>
     <div>
     <h4 style="color:white" v-if='isDrawing == true'>{{drawThis}}</h4>
@@ -17,6 +18,7 @@
     <form action="" v-if="isDrawing == false">
       <input type="text" v-model='guessDrawing'>
       <button type="submit" @click.prevent='inputAnswer' class="btn btn-primary">Submit</button>
+      <p style="color:white" v-if="response !=='' ">Response: {{response}}</p>
     </form>
     </div>
     <div>
@@ -53,7 +55,7 @@ export default {
       answerDrawing: '',
       isDrawing: false,
       userScore: 0,
-      displayWinner: false
+      response: ''
     }
   },
   components: {
@@ -99,6 +101,10 @@ export default {
     },
     strokeBlack () {
       this.ctx.strokeStyle = 'black'
+    },
+    clearCanvas () {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+      socket.emit('draw', this.canvas.toDataURL())
     },
     eraser () {
       this.ctx.strokeStyle = 'white'
@@ -155,14 +161,13 @@ export default {
     })
 
     socket.on('submitAnswerResponse', payload => {
-      console.log(payload)
       if (payload === true && this.timer > 0) {
         this.userScore += 10
-        console.log('My current score ' + this.userScore)
+        this.response = `Correct! My current score is ${this.userScore}`
         socket.emit('stopRound')
         this.timer = 0
       } else if (payload === false) {
-        console.log('Wrong Answer!')
+        this.response = 'Wrong Answer!'
       }
     })
 
@@ -175,6 +180,9 @@ export default {
     socket.on('stopRound', payload => {
       this.timer = 0
       this.isDrawing = false
+    })
+
+    socket.on('userWin', payload => {
     })
   },
   beforeUpdate () {
