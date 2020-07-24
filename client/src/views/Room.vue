@@ -25,13 +25,11 @@
 
 <script>
 import Canvas from '@/components/Canvas.vue'
-// import Answer from '@/components/Answer.vue'
 
 export default {
   name: 'Gameroom',
   components: {
     Canvas
-    // Answer
   }
 }
 </script>
