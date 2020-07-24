@@ -7,7 +7,7 @@
               </div>
               <div class="col-sm-8">
                   <div class="row" style="height: 600px; background-color:blue;">
-                      <!-- <Canvas /> -->
+                      <Canvas />
 
                   </div>
                   <div class="row">
@@ -25,12 +25,12 @@
 </template>
 
 <script>
-// import Canvas from '@/components/Canvas.vue'
+import Canvas from '@/components/Canvas.vue'
 
 export default {
   name: 'Gameroom',
   components: {
-    // Canvas
+    Canvas
   }
 }
 </script>
