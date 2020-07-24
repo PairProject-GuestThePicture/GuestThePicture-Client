@@ -64,10 +64,14 @@ export default {
     },
     save () {
       // send data
-      console.log(this.username)
-      socket.emit('newRooms', { title: this.title, description: this.description, username: this.getUsername })
+      socket.emit('newRooms', { title: this.title, description: this.description, members: [{ username: this.userName }] })
       this.$router.push('/room')
       this.$store.dispatch('fetchRooms')
+    }
+  },
+  computed: {
+    userName () {
+      return this.$store.state.userName
     }
   }
 }

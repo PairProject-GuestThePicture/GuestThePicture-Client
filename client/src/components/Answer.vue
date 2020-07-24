@@ -1,26 +1,14 @@
 <template>
-<<<<<<< HEAD
-  <div class="answer">
-    <ul id="messages"></ul>
-    <form action="">
-      <input type="text" v-model="message" autocomplete="off" placeholder="Type Message Here ..."/><button>Send</button>
-=======
   <div class="card">
     <ul id='messages'></ul>
     <form>
       <input v-model='guessDrawing' autocomplete='off' />
       <button type='submit' @click.prevent='inputAnswer' class='btn btn-primary'>Send</button>
->>>>>>> Development
     </form>
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-
-export default {
-
-=======
 export default {
   name: 'Answer',
   data () {
@@ -31,17 +19,10 @@ export default {
     inputAnswer () {
     }
   }
->>>>>>> Development
 }
 </script>
 
 <style>
-<<<<<<< HEAD
-
-=======
-.container {
-
-}
 form input {
   border: 10;
   padding: 10px;
@@ -58,5 +39,4 @@ form input {
 #messages li:nth-child(odd) {
   background: #eee;
 }
->>>>>>> Development
 </style>

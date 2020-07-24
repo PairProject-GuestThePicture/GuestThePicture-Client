@@ -6,7 +6,8 @@
               </div>
               <div class="col-sm-8">
                   <div class="row" style="height: 600px; background-color:blue;">
-                      <!-- <Canvas /> -->
+                      <Canvas />
+
                   </div>
                   <div class="row">
                       <div class="col-sm-6" style="height: 200px">
@@ -23,23 +24,12 @@
 </template>
 
 <script>
-import socket from '@/config/socket.js'
 import Canvas from '@/components/Canvas.vue'
-import Answer from '@/components/Answer.vue'
-import Chat from '@/components/Chat.vue'
 
 export default {
   name: 'Gameroom',
   components: {
-    Canvas,
-    Answer,
-    Chat
-  },
-  mounted () {
-    socket.on('roomsFromServer', (rooms) => {
-      this.listRooms = rooms
-      console.log(rooms)
-    })
+    Canvas
   }
 }
 </script>

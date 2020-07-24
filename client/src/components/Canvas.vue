@@ -150,6 +150,7 @@ export default {
     inputAnswer () {
       this.isDrawing = false
       socket.emit('submitAnswer', [this.guessDrawing, this.answerDrawing])
+      console.log('masukk sini answer')
     }
   },
   mounted () {
