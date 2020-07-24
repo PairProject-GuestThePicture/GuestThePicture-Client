@@ -14,18 +14,18 @@
         </button>
       </div>
       <div class="modal-body">
-        <div>
-          <label for="title"></label>
-          <input type="text" id="title" v-model="title" placeholder="title">
-        </div>
-        <div>
-          <label for="description"></label>
-          <input type="text" id="description" v-model="description" placeholder="description">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" @click.prevent="close">Close</button>
-        <button type="button" class="btn btn-primary" @click.prevent="save">Save</button>
+          <div>
+            <label for="title"></label>
+            <input type="text" id="title" v-model="title" placeholder="title">
+          </div>
+          <div>
+            <label for="description"></label>
+            <input type="text" id="description" v-model="description" placeholder="description">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" @click.prevent="close">Close</button>
+            <button type="button" class="btn btn-primary" @click.prevent="save">Save</button>
+          </div>
       </div>
     </div>
   </div>
@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import io from 'socket.io-client'
+const socket = io('http://localhost:3000/')
 
 export default {
   name: 'CreateRoom',
@@ -45,6 +47,8 @@ export default {
       display: 'none'
     }
   },
+  created () {
+  },
   methods: {
     showModal () {
       this.isModalOpen = true
@@ -55,6 +59,10 @@ export default {
       this.display = 'none'
     },
     save () {
+      // send data
+      socket.emit('newRooms', { title: this.title, description: this.description })
+      this.$router.push('/room')
+      this.$store.dispatch('fetchRooms')
     }
   }
 }
