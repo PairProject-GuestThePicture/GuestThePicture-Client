@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Canvas from '@/components/Canvas.vue'
+// import Canvas from '@/components/Canvas.vue'
 
 export default {
   name: 'Gameroom',
