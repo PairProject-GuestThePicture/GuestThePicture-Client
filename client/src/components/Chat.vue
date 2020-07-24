@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import io from 'socket.io-client'
+import socket from '@/config/socket.js'
 
 export default {
   name: 'Chat',
@@ -16,13 +16,13 @@ export default {
     return {}
   }, 
   mounted () {
-    this.socket = io.connect('http://localhost:3000')
+    socket = io.connect('http://localhost:3000')
 
-    this.socket.on('init', function () {
+    socket.on('init', function () {
       console.log('Init invoked')
     })
 
-    
+   
   }
 }
 </script>

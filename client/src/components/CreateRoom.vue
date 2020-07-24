@@ -59,9 +59,14 @@ export default {
     },
     save () {
       // send data
-      socket.emit('newRooms', { title: this.title, description: this.description })
+      socket.emit('newRooms', { title: this.title, description: this.description, members: [{ username: this.userName }] })
       this.$router.push('/room')
       this.$store.dispatch('fetchRooms')
+    }
+  },
+  computed: {
+    userName () {
+      return this.$store.state.userName
     }
   }
 }
