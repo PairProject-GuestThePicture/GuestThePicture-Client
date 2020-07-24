@@ -35,3 +35,7 @@ Didalam home ada :
 6. Memasukkan componen login ke Dalam home page
 
 7. Menambah router link, Hannya Untuk testing
+
+8. npm install --save bootstrap/dist/css/bootstrap.min.css socket.io-client vuex
+
+9. Mengubah isi componen chattingan ===> Chat.vue
